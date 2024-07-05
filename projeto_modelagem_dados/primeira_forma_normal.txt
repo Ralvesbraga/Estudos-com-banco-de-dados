@@ -1,0 +1,14 @@
+1ª Forma normal - Revisão:
+-Uma tabela está na 1ª forma normal quando:
+*Existe uma chave primária
+*Somente possui valores atômicos
+*Relação não possui atributos multivalorados ou relações aninhadas
+*Relação não possui atributos compostos
+
+
+
+-alterações feitas na tabela:
+*foram feitas alterações na entidade aluno e histórico.
+*Em aluno, pois tinham muitos campos multivalorados, como por ex, telefone.
+*Também foi identificado campos não atomicos, como contato, filiação e, na entidade histórico, périodo_em_andamento;
+*Após a identificação, foram criados mais campos, tornando assim atômicos.
