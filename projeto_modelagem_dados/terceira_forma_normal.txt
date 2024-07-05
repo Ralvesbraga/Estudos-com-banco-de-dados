@@ -1,0 +1,19 @@
+3ª forma normal - revisção:
+- Uma tabela está na 3FN se:
+*Estier na 2FN
+*Não existirem depenD~encias transitivas
+*Uma tabela está na Terceira Foram Normal se ela estiver na 2FN e se nenhuma coluna
+    não-chave depender de utra coluna não-chave.
+
+*Dependência transitiva é uma dependência funcional entre dois ou mais atributos não-chave.
+    Caso contrário, deve-se gerar uma nova tabela.
+
+3FN - Como resolver:
+
+*Para cada atributo (ou grupo) não-chave que for um determinante na relação, crie uma nova tabela.
+*Esse atributo será a PK na nova relação.
+*Mova então todos os atributos que são dependentes funcionalmente do atributo chave para a nova tabela.
+*O atributo (PK na nova relaçao) fica também na tabela original, e servirá como uma chave estrangeira para  
+    associar as duas relações.
+
+*a tabela ja se encontra na 3FN também. 
