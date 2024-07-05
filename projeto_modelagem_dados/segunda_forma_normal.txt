@@ -1,0 +1,17 @@
+2ª Forma normal - revisão:
+-Uma tabela está na 2ª forma normal quando:
+*Está na 1FN
+*Todos os atributos não-chave são funcionalmente dependentes de todas as partes da chave primária.
+*Não existem depêndencias parciais, e atributos não dependem de chaves candidatas.
+
+Caso contrário, deve-se gerar uma nova tabela com os dados.
+
+Um atributo-chave é um que é uma PK ou parte de uma
+
+Alterções feitas na tabela:
+-Foram alteradas a tabela aluno:
+*Pois tinham campos que não eram completamente dependentes da chave primária RA. por ex: Nome_rua, número, CEP e Telefone_Res. Pois pode existir outros alunos
+    que moram na mesma localidade e que utilizem o mesmo relefone residencial.
+
+*Após a identificação do problema, foi criado novas tabelas Telefones_Aluno, Tipo_Telefone. E eliminamos os dois campos de telefones.
+*Também foi criado as tebelas Endereco_Aluno e Tipo_Logradouro, eliminando, assim, os campos relacionados a endereço. 
