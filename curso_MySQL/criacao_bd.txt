@@ -1,0 +1,21 @@
+AULA 02 - MySQL - Bóson Treinamentos
+
+- Para criar um novo banco de dados use:    'CREATE DATABASE [IF NOT EXISTS] nome_BD;'
+* O elemento IF NOT EXISTS é opcional.previne erro de criar um bd com o mesmo nome de outro já existente.
+
+- Para verificar os banco de dados existentes, use o comando:   'SHOW DATABASES;'
+
+- Comando USE instrui o SGBDR a utilizar o bd especificado para rodar os comandos.
+
+    Sintaxe: 'USE nome_banco_de_dados;'
+
+* Pra visualizar o banco de dados selecionado no momento use o comando: 'SELECT DATABASE();'
+
+- Para excluir um bd existente, use o comando 'DROP DATABASE;':
+
+    Sintaxe: 'DROP DATABASE [IF EXISTS] nome_BD;'
+
+- Para mostrar as tabelas existentes no BD, use o comando: 'SHOW TABLES;'
+
+
+
