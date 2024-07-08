@@ -1,0 +1,59 @@
+AULA 01 - MySQL - Bóson Treinamentos
+
+O que é SGBDR:
+* Sistema Gerenciador de banco de dados relacional
+* Trata-se de um sistema de gerenciamento de baco de dados baseado no modelo relacional introduzido por Codd.
+ 
+C omposição de um banco de dados:
+* Tabelas
+* Campos (Colunas), atributos
+* Registro (Linhas), tupla
+ 
+-  Tabelas:
+* São objetos onde são armazenados os dados em um banco de dados relacional, no qual consiste em uma coleção de linhas e colunas.
+ 
+-  Campo:
+* São entidaades que representm os atributos dos dados, como Nome, Data de Nascimento, Salário, Preço, etc.
+* Um campo é uma coluna em uma tabela que mantém informações específicas sobre cada registro.
+ 
+-  Regstro:
+* Linha, ou tupla
+* Cada entrada individual em uma tabela.
+     Trata-se de um conjunto de campos relacionados que caracterizam os dados de uma entidade única.
+ 
+O  que é SQL?
+* Linguagem de Consulta Estruturada padrão para acesso a BDs.
+ 
+F unções do SQL:
+* Permite o acesso a dados em SGBDR
+* Permite definir os dados no banco de dados e manipulá-los.
+* Pode ser embutido em outras linguagens usando módulos SQL, bibliotecas, etc.
+* Permite criar e excluir banco de dados e tabelas.
+* Permite a criação de Visões (Exibições), Stored Procedures e Funções em um Banco de Dados.
+* Permite configurar permissões de acesso em tabelas, procedimentos e visões.
+
+- Grupos de Comandos:
+Os comandos SQL podem ser divididos em quatro grupos principais:
+
+*DDL - Data Definition Language:
+Comando | Descrição
+CREATE  | Cria uma nova tabela, visão ou outro objeto no BD.
+ALTER   | Modifica uma objeto existente no BD, como uma tabela.
+DROP    | Exclui uma tabela inteira, uma exibição de uma tabela ou outro objeto no banco de dados
+
+
+*DML - Data Manipulation Language:
+Comando | Descrição
+INSERT  | Cria um registro (linha)
+UPDATE  | Modifica registros
+DELETE  | Exclui registros
+
+
+*DCL - Data Control Language:
+Comando | Descrição
+GRANT   | Dá privilégios a um usuário
+REVOKE  | Retira privilégios fornecidos a um usuário
+
+*DQL - Data Query Language
+Comando | Descrição
+SELECT  | Obtém registros especificados de uma ou mais tabelas. (consulta).
