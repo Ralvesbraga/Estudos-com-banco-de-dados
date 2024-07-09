@@ -1,0 +1,49 @@
+AULA 07 - MySQL - Bóson Treinamentos
+
+- Alterar Tabelas:
+* É possível alterar a estrutura de uma tabela após ter sido criada, acrescentando ou excluindo atributos (campos)
+* Usamos para isso o comando ALTER TABLE:
+* EX:
+    "ALTER TABLE tabela
+    DROP COLUMN coluna;"
+
+    "ALTER TABLE tbl_Livro
+    DROP COLUMN ID_Autor;"
+
+    Pode-se excluir uma chave primária:
+    ex:
+        'ALTER TABLE tabela
+         DROP PRIMARY KEY;'
+
+* Podemos adicionar colunas:
+* ex:
+    ALTER TABLE tabela
+    ADD coluna tipo_dados constraints;
+
+    "
+        alter table tbl_Livro
+        add ID_Autor smallint not null;
+
+        alter table tbl_Livro               | escolhe a tabela que quer alterar
+        add constraint fk_ID_Autor          | usa o add para adicionar uma restrição chamada fk_ID_Autor
+        foreign key (ID_Autor)              | e a foreign key é ID_Autor
+        references tbl_autores(ID_Autor);   | que se referencia a tabela autores, coluna ID_Autor
+
+        alter table tbl_Livro
+        add ID_Editora smallint not null;
+
+        alter table tbl_Livro
+        add constraint fk_ID_Editora
+        foreign key (ID_Editora)
+        references tbl_editoras(ID_Editora);
+    "
+
+* Podemos alterar colunas, por exemplo mudando o tipo de dados: 
+    ALTER TABLE tbl_Livro
+    Alter COLUMN ID_Autor SMALLINT;
+
+* Pode-se adicionar uma chave primária a uma tabela que já tenha coluna mas não tenha essa coluna definida.
+    ALTER TABLE Clientes
+    ADD PRIMARY KEY (ID_Cliente)
+
+    Obs. A coluna ID_Cliente deve existir antes de ser transformada em PK. Daí a coluna ID_Cliente receberá a constraint PK, e passará a ser a PK da tabela.
