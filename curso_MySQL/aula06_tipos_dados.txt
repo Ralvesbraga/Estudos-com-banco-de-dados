@@ -11,3 +11,13 @@ DECIMAL(M,D)    | Ponto decimal com M digitos no total (precisão) e D casas dec
 FLOAT(M,D)      | Ponto flutuante com precisão M e escala D; o padrão é 10,2; D vai até 24
 CHAR(M)         | String que ocupa tamanho fixo entre 0 e 255 caracteres
 BOOL / BOOLEAN  | Valores binários 0 / 1; Na verdade, é um alias para o tipo TINYINT(1);
+VARCHAR(M)      | String de tamanho variável, até 65535 caracteres.
+BLOB/           | Campos com tamanho máximo de 65535 caracteres binários; 'Binary Large Objects', são usados para armazenar 
+MEDIUMBLOB/     | grandes quantidades de dados, como imagens.
+TINYBLOB        |
+MEDIUMTEXT      | Permite armazenar até 16.777.215 caracteres
+LONGTEXT        | Permite armaenar até 4294967295 caracteres
+DATE            | Uma data de 01/01/1000 a 31/12/9999, no formato YYYY-MM-DD
+DATETIME        | Uma combinação de data e hora de 01/01/1000 00:00:00 a 31/12/9999 23:59:59, no formato YYYY-MM-DD HH:MM:SS
+TIME            | Hora apenas, no formato HH:MM:SS
+YEAR(M)         | Ano nos formatos de 2 ou 4 digitos; Se forem 2 (YEAR(2)), ano vai de 1970 a 2069; para 4 (YEAR(4)), vai de 1901 a 2155. O parão é4.
