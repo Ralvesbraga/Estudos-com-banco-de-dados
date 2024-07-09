@@ -1,0 +1,40 @@
+AULA 05 - MySQL - Bóson Treinamentos
+
+
+- AUTO_INCREMENT:
+* O auto incremento permite que um número uúnico seja gerado quando um novo registro é inserido em uma tabela.
+* Em MYSQL trata-se da palavra chave AUTO_INCREMENT, cujo valor incial padrão é 1, e se incrementa em 1.
+* Para que o valor da coluna se inicie em 100, por exemplo, use: 'AUTO_INCREMENT = 100'
+* Ao inserir valores na tabela, não é necessário especificar o valor para a coluna de auto-incremento
+* Só é permitido usar uma coluna de auto incremento por tabela, geralmente do tipo inteiro.
+* Necessita também da constraints NOT NULL (configurado automaticamente).
+* ex:
+    "
+        create table tbl_incremento(
+        Codigo smallint primary key auto_increment,
+        Nome varchar(20) not null
+        ) auto_increment = 15;
+
+        insert into tbl_incremento (Nome) values ('Ana');
+        insert into tbl_incremento (Nome) values ('Maria');
+        insert into tbl_incremento (Nome) values ('Julia');
+        insert into tbl_incremento (Nome) values ('Joana');
+
+        select * from tbl_incremento;
+    "
+
+* Podemos verificar o valor de incremento mais atual armazenado em uma tabela no bd com 
+    o comando a seguir:
+    'SELECT MAX(nome_coluna)
+    FROM tabela'
+
+    Exemplo:
+    'SELECT MAX(ID_Livro)
+    FROM tbl_livro;'
+
+* Para lterar o valor de incremento do próximo registro a ser armazenado em uma tabela, use
+    o comando a seguir: 'ALTER TABLE tabela AUTO_INCREMENT = valor;'
+    ex: usar o valor 90 a partir do próximo registro:
+    
+    'ALTER TABLE tbl_teste_incremento'
+    AUTO_INCREMENT = 90;
