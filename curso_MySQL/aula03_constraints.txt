@@ -1,0 +1,39 @@
+AULA 03 - MySQL - Bóson Treinamentos
+
+- SQL Constraints (Restrições):
+* Restrições são regras aplicadas nas colunas de um tabela
+* São usadas para limitar os tipos de dados que são inseridos.
+* Podem ser especificadas no momento de criação da tabela (CREATE) ou após a tabela ter sido criada (ALTER)
+
+* Principais Constraints:
+    * NOT NULL:
+        * impõe a uma coluna a NÃO aceitar valores NULL (nulos).
+        * obriga um campo a sempre possuir um valor, logo não é possível inserir (ou atualizar) 
+            um registro sem entrar com um valor neste campo.
+
+    * UNIQUE:
+        * identifica de forma única cada registro em uma tabela de um banco de dados.
+        * a Constraints UNIQUE e PRIMARY KEY garantem a unicidade em uma coluna ou conjunto de colunas.
+        * uma constraints PK automaticamente possui uma restrição UNIQUE definida.
+        * você pode ter várias UNIQUE em uma tabela, mas apenas uma chave PK por tabela.
+
+    * PRIMARY KEY:
+        * a PK identifica de forma única cada registro em uma tabela de banco de dados.
+        * chaves primárias devem conter valores únicos.
+        * uma coluna de chave primária não pode conter valores NULL.
+        * cada tabela deve ter uma chave primária e apenas uma chave primária.
+
+    * FOREIGN KEY:
+        * uma FK em uma tabela é um campo que aponta para uma chave primária em outra tabela.
+        ex:
+            CONSTRAINT fk_ID_Autor FOREIGN KEY (ID_Autor)
+            REFERENCES tbl_autores(ID_Autor)
+
+        * neste exemplo a chave primária está na tabela tbl_autores e uma chave estrangeira de nome ID_Autor foi criada na tabela atual,
+            usando o nome fk_ID_Autor.
+
+    * DEFAULT:
+        * a restrição DEFAULT é usada para inserir um valor padrão em uma coluna.
+        * o valor padrão será adicionado a todos os novos registros caso nenhum outro valor seja especificado.
+
+
