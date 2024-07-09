@@ -1,0 +1,13 @@
+AULA 06 - MySQL - Bóson Treinamentos
+
+- Tipos de dados do MYSQL:
+
+INT             | Inteiro entre -2,147,483,648 e 2,147,483,647 
+TINYINT         | Números inteiros de -128 a 127
+SMALLINT        | Números inteiros de -32768 a 32767
+MEDIUMINT       | Números inteiros de -8388608 a 8388607
+BIGINT          | Muito número, mais de 1 trilhão
+DECIMAL(M,D)    | Ponto decimal com M digitos no total (precisão) e D casas decimais (escala); o padrão é 10,0; M vai até 65 e D até 30.
+FLOAT(M,D)      | Ponto flutuante com precisão M e escala D; o padrão é 10,2; D vai até 24
+CHAR(M)         | String que ocupa tamanho fixo entre 0 e 255 caracteres
+BOOL / BOOLEAN  | Valores binários 0 / 1; Na verdade, é um alias para o tipo TINYINT(1);
