@@ -1,4 +1,4 @@
-AULA 07 - MySQL - Bóson Treinamentos
+AULA 08 - MySQL - Bóson Treinamentos
 
 - Inserir dados em uma tabela:
 * Sintaxe: 

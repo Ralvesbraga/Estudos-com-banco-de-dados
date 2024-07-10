@@ -1,0 +1,15 @@
+AULA 10 - MySQL - Bóson Treinamentos
+
+- Consultas Ordenadas
+
+*A palavra-chave ORDER BY é usad para ordenar o conjunto-resultado de registros.
+*ASC - Ordem ascendente
+*DESC - Ordem descendente (inversa)
+
+*EX:   "SELECT * FROM tbl_Livro
+        ORDER BY Nome_Livro ASC; // Não é obrigatorio usar o ASC
+        
+        SELECT Nome_Livro, ID_Editora FROM tbl_Livro ORDER BY ID_Editora; (Ordem crescente)
+
+        SELECT Nome_Livro, Preco_Livro FROM tbl_Livro ORDER BY Preco_Livro DESC; (Ordem decrescente)
+        "

@@ -1,0 +1,17 @@
+AULA 09 - MySQL - Bóson Treinamentos
+
+- Consultas Simples:
+
+*SELECT coluna FROM Tabela;
+*ex:
+    SELECT Nome_Autor FROM tbl_Autores;
+    SELECT * FROM tbl_Autores;
+    SELECT Nome_Livro FROM tbl_Livro;
+
+*Especificando Colunas
+
+* Sintaxe: SELECT colunas FROM tabela;
+* ex: SELECT Nome_Livro, ID_Autor FROM tbl_Livro;
+    
+    SELECT Nome_Livro, ISBN
+    FROM tbl_Livro;
