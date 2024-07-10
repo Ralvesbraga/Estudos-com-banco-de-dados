@@ -1,0 +1,32 @@
+AULA 07 - MySQL - Bóson Treinamentos
+
+- Inserir dados em uma tabela:
+* Sintaxe: 
+           "INSERT INTO tabela (coluna1,coluna2,...)
+            VALUES (valor1, valor2,...);"
+*   ex:
+        " NA TABELA AUTORES:
+
+            insert into tbl_autores(ID_Autor, Nome_Autor,SobreNome_Autor) values (1,'Daniel', 'Barret');
+            insert into tbl_autores(ID_Autor, Nome_Autor,SobreNome_Autor) values (2,'Gerald', 'Carter');
+            insert into tbl_autores(ID_Autor, Nome_Autor,SobreNome_Autor) values (3,'Mark', 'Sobell');
+            insert into tbl_autores(ID_Autor, Nome_Autor,SobreNome_Autor) values (4,'William', 'Stanek');
+            insert into tbl_autores(ID_Autor, Nome_Autor,SobreNome_Autor) values (5,'Richard', 'Blum');
+
+
+          NA TABELA EDITORAS:
+
+            insert into tbl_editoras(Nome_Editora) values ('Prentice Hall');
+            insert into tbl_editoras(Nome_Editora) values ('O´Reilly');
+            insert into tbl_editoras(Nome_Editora) values ('Microsoft Press');
+            insert into tbl_editoras(Nome_Editora) values ('Wiley');
+
+          NA TABELA LIVRO:    
+
+            INSERT INTO tbl_livro (Nome_Livro, ISBN, Data_Pub, Preco_Livro, ID_Autor, ID_Editora)
+            VALUES
+            ('Linux Command Line and Shell Scripting','111898384X', '20150109', 68.35, 5, 4),
+            ('SSH, the Secure Shell', '0596008953', '20050517', 58.30, 1, 2),
+            ('Using Samba','0596002564', '20031221', 61.45, 2, 2);
+
+        "
