@@ -1,0 +1,50 @@
+AULA 12 - MySQL - Bóson Treinamentos
+
+-Cláusula WHERE:
+*Permite filtrar registros em uma consulta.
+* SINTAXE:
+            "SELECT colunas FROM tabela WHERE coluna = valor;"
+        EX:
+            SELECT Nome_Livro, Data_Pub FROM tbl_Livro WHERE ID_Autor = 1;
+
+            SELECT ID_Autor, Nome_Autor FROM tbl_autores WHERE Sobrenome_Autor = 'Stanek';
+
+- WHERE com Operadores AND, OR e NOT:
+* Usados pra filtrar registros baseados em mais de uma condição.
+* O operador AND mostra um registro se ambas as condições forem verdadeiras.
+* O operador OR mostra um registro se pelo menos uma das consições forem verdadeiras.
+* O operador NOT é a negação de uma expressão.
+* ex:
+    SELECT * FROM tbl_Livro
+    WHERE ID_Livro > 2 AND ID_Autor < 3;
+
+    SELECT * FROM tbl_Livro
+    WHERE ID_Livro > 2 OR ID_Autor < 3;
+
+    SELECT * FROM tbl_Livro
+    WHERE ID_LIVRO > 2 AND NOT ID_Autor <3;
+
+- WHERE com Operadores IN e NOT IN:
+
+* Filtragem usando listas de valores no MySQL.
+
+* SINTAXE:
+            SELECT colunas(s)
+            FROM tabela(s)
+            WHERE expressão / valor IN -OU NOT IN - (lista de valores);
+* EX:
+        SELECT Nome_Livro, ID_Editora
+        FROM tbl_livro
+        WHERE ID_Editora IN (2,4);
+
+        SELECT Nome_Livro, Edicao
+        FROM tbl_livro
+        WHERE Edicao NOT IN (1,2);
+
+        SELECT Nome_Livro, ID_Editora
+        FROM tbl_Livro
+        WHERE ID_Editora IN (
+            SELECT ID_Editora
+            FROM tbl_editoras
+            WHERE Nome_Editora = 'Wiley' OR Nome_Editora = 'Microsoft Press' // vai na tabela editoras onde o nome eu conheço e retorna o id delas, para o primeiro filtro, onde quero saber os nomes
+        );
