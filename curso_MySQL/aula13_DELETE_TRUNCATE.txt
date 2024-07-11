@@ -1,0 +1,17 @@
+AULA 13 - MySQL - Bóson Treinamentos
+
+- Excluir Registros:
+
+* SINTAXE:
+          DELETE FROM tabela WHERE coluna = valor;
+* EX:
+      DELETE FROM tbl_autores WHERE ID_Autor = 2;
+    obs: Sempre use a cláusula WHERE para evitar a perda de dados da tabela!
+
+- TRUNCATE TABLE:
+
+* Remove todas as linhas  de uma tabela sem registrar as exclusões de linhas individuais.
+* TUNCRATE TABLE é como a instrução DELETE sem usar a cláusula WHERE.
+* Entretanto, TRUNCATE TABLE é mais rápida e utiliza menos recursos de sistema e log de transações.
+*EX: Excluir todos os registros da tabela tbl_teste_incremento:
+    TRUNCATE TABLE tbl_teste_incremento
