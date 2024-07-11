@@ -1,0 +1,32 @@
+AULA 15 - MySQL - Bóson Treinamentos
+
+- FUNÇÕES DE AGREGAÇÃO:
+* Funções de agragação são funções  SQL que permitem executar uma operação aritmética
+    nos valores de uma coluna em todos os registros de uma tabela.
+*Retornam um valor único baseado em um conjunto de valores.
+* SINTAXE BÁSICA:
+                 função(ALL / DISTINCT expressão)
+
+- FUNÇÕES:
+* MIN = Valor Mínimo
+* MAX = Valor Máximo
+* AVG = Média Aritmética
+* SUM = Total (Soma)
+* COUNT = Contar quantidade de itens
+
+ex: 
+    SELECT COUNT(*) FROM tbl_autores;
+
+    SELECT COUNT (DISTINCT id_autor) FROM tbl_Livro;
+
+    SELECT MAX(Preco_Livro) FROM tbl_Livro;
+
+    SELECT MIN(Preco_Livro) FROM tbl_Livro;
+
+    SELECT AVG(Preco_Livro) FROM tbl_Livro;
+
+    SELECT SUM(Preco_Livro) FROM tbl_Livro;
+
+    pode-se usar o where para filtrar, e o ALIAS para apelidar tbm.
+
+
