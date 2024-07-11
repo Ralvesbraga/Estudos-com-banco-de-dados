@@ -1,0 +1,42 @@
+AULA 11 - MySQL - Bóson Treinamentos
+
+- Índices:
+*Indices são empregados em Consultas para ajudar a encontrar registros com um valor especifico em uma coluna de forma mais rápida.
+*Com indices, o MySQL vai direto a uma linha em vez de buscar toda a tabela até encontrar os registros que importam.
+*Por padrão, o MySQL cria índices automaticamente para campos de:
+    * Chave Primária
+    * Chave Estrangeira
+    * Constraint UNIQUE
+*Além disso, podemos criar indices para outras colunas usadas com frequência em buscas ou junções.
+
+- Índice Clusterizado
+* alteram a forma como os dados são armazenads em um bd, pois ele classifica as linhas de acordo com a coluna que possui o índice.
+* Uma tabela só pode ter um índice clusterizado. Geralmente está na coluna que é chave Primária da tabela ou, em sua ausência, em uma coluna UNIQUE.
+* Se uma tabela mão possuir índice clusterizado, suas linhas são armazenadas em uma estrutura não-ordenada chamada de heap.
+
+- Índice não-clusterizado
+* Em um índice não-clusterizado a forma como os dados são armaenados não é alterada, e um objeto separado é criado na tabela, apontando para as linhas
+    da tabela original após a busca.
+* Baseia-se em valores-chave
+* Uma tabela pode ter vários índices não-clusterizados.
+
+- Criar Índices: 
+* Declaração CREATE INDEX em uma tabela já existente:
+* SINTAXE: 
+            "CREATE [UNIQUE] INDEX nome_índice ON nome_tabela(
+                coluna1 [ASC | DESC],
+                [coluna2[ASC|DESC]]...
+            );"
+* Declaração ALTER TABEL / ADD INDEX em uma tabela já existente:
+* SINTAXE:
+            "ALTER TABLE nome_tabela ADD INDEX nome_índice (colunas)"
+
+* EXEMPLO: 
+            "SHOW INDEX FROM tbl_Editoras;
+
+            EXPLAIN SELECT * FROM tbl_editoras  | Explica como foi encontrado a chave, o tempo, a filtragem e quantos ele teve que ler até
+            WHERE Nome_Editora = 'Springer';    |   chegar na chave desejada.
+
+            CREATE INDEX idx_editora ON tbl_editoras(Nome_Editora);     | Cria um indice na tabela editora, na chave Nome_Editora. Mas só deve ser usada, naquelas chaves mais acessadas.
+                                                                        |  colunas que são excluidas, alteradas ou atualizadas demoram mais, se estiverem usando indices. Pois serão refeitas os indices.
+            DROP INDEX idx_editora ON tbl_Editoras;     | Retira o indice."
