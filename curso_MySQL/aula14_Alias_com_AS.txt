@@ -1,0 +1,16 @@
+AULA 14 - MySQL - Bóson Treinamentos
+
+- SQL Alias (apelido)
+* Pode-se dar um nome diferente a uma coluna ou tabela em uma consulta.
+* SINTAXE:
+          SELECT coluans
+          AS alias_coluna
+          FROM tabela AS alias_tabela;
+
+        ex:
+          SELECT Nome_Livro
+          AS livros
+          FROM tbl_Livro AS MeusLivros;
+
+          SELECT Nome_Livro AS Livros, Preco_Livro AS Preço
+          FROM tbl_Livro;
