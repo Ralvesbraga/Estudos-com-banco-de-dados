@@ -1,4 +1,6 @@
+
 AULA 15 - MySQL - Bóson Treinamentos
+
 
 - FUNÇÕES DE AGREGAÇÃO:
 * Funções de agragação são funções  SQL que permitem executar uma operação aritmética
