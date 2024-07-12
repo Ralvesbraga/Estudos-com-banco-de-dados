@@ -1,0 +1,26 @@
+AULA 20 - MySQL - Bóson Treinamentos:
+
+- REGEXP:
+* O MySQL suporta um tipo de operação de busca de padrões baseada em expressões regulares com o operador REGEXP.
+
+[...] - Qualquer caracter único no intervalo ou conjunto especificado ([a-h];[aeiou])
+
+[^...] - Qualquer caracter único que NÃO esteja no intervalo ou conjunto especificado ([^a-h];[^aeiou])
+
+^- Inicio da string
+$ - Fim da string
+a|b|c - Alternação (a ou b ou c)
+
+* EX:
+    SELECT Nome_Livro FROM tbl_livro
+    WHERE Nome_Livro REGEXP '^[FS]'; PROCURA LIVROS QUE COMECEM COM F OU S
+
+    SELECT Nome_Livro FROM tbl_livro
+    WHERE Nome_Livro REGEXP '^[^FS]'; PROCURA LIVROS QUE COMECE COM QUALQUER LETRA DIFERENTE DE FS
+
+
+    SELECT Nome_Livro FROM tbl_livro
+    WHERE Nome_Livro REGEXP '^[ng]$'; // PROCURA LIVROS QUE TERMINA COM NG
+
+    SELECT Nome_Livro FROM tbl_livro
+    WHERE Nome_Livro REGEXP '^[FS]|Mi'; PROCURA LIVROS QUE COMECEM COM F OU S, OU COM A SEQUÊNCIA Mi
