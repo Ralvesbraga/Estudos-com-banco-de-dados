@@ -1,0 +1,15 @@
+AULA 17 - MySQL - Bóson Treinamentos
+
+- Atualizar registros
+
+*SINTAXE:
+        UPDATE tabela
+        SET coluna = novo_valor_armazenado
+        WHERE coluna = valor_filtro;
+* Obs: Caso não seja usada a cláusula WHERE para filtrar os registros, todos os dados da coluna serão alterados.
+
+* EX:
+    UPDATE tbl_Livro
+    SET NOME_Livro = 'SSH, o Shell Seguro'
+    WHERE ID_Livro = 2;
+    
