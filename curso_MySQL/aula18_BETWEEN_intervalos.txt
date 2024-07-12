@@ -1,0 +1,7 @@
+AULA 17 - MySQL - Bóson Treinamentos
+
+- BETWEEN - Seleção de Intervalos
+
+* SINTAXE: 
+            SELECT colunas FROM tabela
+            WHERE coluna BETWEEN valor1 AND valor2;
