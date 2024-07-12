@@ -1,0 +1,29 @@
+AULA 16 - MySQL - Bóson Treinamentos
+
+- Renomear Tabelas:
+*Use o comando RENAME TABLE: RENAME TABLE tabela1 TO tabela2;
+*EX:
+    RENAME TABLE Clientes TO Meus_Clientes;
+    Clientes: Nome atual
+    Meus_Clientes: Novo Nome
+*EX:
+    USE db_biblioteca;
+
+    CREATE TABLE Clientes(
+    	ID_Cliente SMALLINT,
+        Nome_CLiente VARCHAR(20),
+        CONSTRAINT PRIMARY KEY(ID_Cliente)
+        );
+        
+    INSERT INTO CLientes (ID_Cliente,Nome_Cliente)
+    VALUES (22, 'Fábio');
+    
+    INSERT INTO Clientes (ID_Cliente, Nome_Cliente)
+    VALUES (34, 'Alberto');
+    
+    INSERT INTO Clientes (ID_Cliente, Nome_Cliente)
+    VALUES (63, 'Eric');
+    
+    SELECT * FROM Meus_Clientes;
+    
+    RENAME TABLE Clientes TO Meus_Clientes;
