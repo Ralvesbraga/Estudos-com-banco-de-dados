@@ -1,0 +1,23 @@
+AULA 19 - MySQL - Bóson Treinamentos:
+
+- LIKE e NOT LIKE:
+*Determina se uma cadeia de caracteres específica corresponde a um padrão especificado. Um pad~rao pode incluir 
+    caracteres ormais e curingas.
+* NOT LIKE inverte a comparação, verificando se a cadeia de caracteres NÃO corresponde ao padrão especificado.
+
+- LIKE - Padrões específicos (metacaracteres)
+'%' - Qualquer cadeia de 0 ou mais caracteres
+
+'_ - Sublinhado: qualquer caracter único
+
+- USANDO O LIKE:
+*SINTAXE: 
+         SELECT * FROM tbl_Livro
+         WHERE Nome_Livro LIKE 'F%'; // Procura livros que começa com a letra F
+
+         SELECT * from tbl_Livro
+         where Nome_Livro NOT LIKE 'S%'; // Procura livros que não começa com a letra S
+
+         SELECT Nome_Livro
+         FROM tbl_Livro
+         WHERE Nome_Livro LIKE '_i%'; // Procura livros que o segundo caracter seja o i
