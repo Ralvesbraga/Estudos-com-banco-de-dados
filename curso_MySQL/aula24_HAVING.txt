@@ -1,0 +1,26 @@
+AULA 24 - MySQL - Bóson Treinamentos:
+
+- HAVING:
+*Cláusula usada para especificar condições de filtragem em grupos de registros ou agregações. É frequentemente usada com a cláusula GROUP BY para 
+    filtrar as colunas agrupadas.
+
+*SINTAXE:
+         SELECT colunas, função_agregação()
+         FROM nome_tabela
+         WHERE filtro
+         GROUP BY colunas
+         HAVING filtro_agrupamento
+
+* EX1:
+- Consulta retornando total de vendas das cidade com menos de 2500 produtos vendidos:
+    SELECT Cidade, SUM(Quantidade) AS Total
+    FROM Vendas
+    GROUP BY Cidade
+    HAVING SUM(Quantidade) < 2500;
+
+* EX2:
+- Consulta retornando total de vendas do produto 'Teclado' das cidades com menos 1500 teclados vendidos:
+
+    SELECT Cidade, SUM(Quantidade) AS TotalTeclados
+    FROM VendasWHERE Produto = 'Teclado'
+    GROUP BY CidadeHAVING SUM(Quantidade) < 1500;
