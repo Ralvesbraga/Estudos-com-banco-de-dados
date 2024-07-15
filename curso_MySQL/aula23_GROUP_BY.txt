@@ -1,0 +1,42 @@
+AULA 23 - MySQL - Bóson Treinamentos:
+
+- GROUP BY:
+*Usamos a cláusula GROUP BY para agrupar registros em subgrupos baseados em colunas ou valores retornados por uma expressão.
+* SINTAXE:
+            SELECT colunas, função_agregação()
+            FROM nome_tabela
+            WHERE filtro
+            GROUP BY colunas
+
+* EX:
+     CREATE TABLE Vendas(
+     ID Smallint Primary Key,
+     Nome_Vendedor Varchar(20),
+     Quantidade int,
+     Produto varchar(20),
+     Cidade Varchar(20)
+     );
+     
+     INSERT INTO Vendas (ID, Nome_Vendedor, Quantidade, Produto, Cidade)
+     VALUES
+     (10,'Jorge',1400,'Mouse','São Paulo'),
+     (12,'Tatiana',1220,'Teclado','São Paulo'),
+     (14,'Ana',1700,'Teclado','Rio de Janeiro'),
+     (15,'Rita',2120,'Webcam','Recife'),
+     (18,'Marcos',980,'Mouse','São Paulo'),
+     (19,'Carla',1120,'Webcam','Recife'),
+     (22,'Roberto',3145,'Mouse','São Paulo');
+
+- Usando o GROUP BY:
+*Consulta usando agregação para obter total de vendas de Mouses:
+    SELECT SUM(Quantidade) As TotalMouses
+    FROM Vendas
+    WHERE Produto = 'Mouse';
+*Consulta totalizando as vendas de todos os produtos por cidade:
+    SELECT Cidade, SUM(Quantidade) As TotalMouses
+    FROM Vendas
+    GROUP BY Cidade;
+
+    SELECT Cidade, COUNT(*) AS Total
+    FROM Vendas
+    GROUP BY Cidade;
