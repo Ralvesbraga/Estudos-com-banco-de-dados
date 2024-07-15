@@ -1,0 +1,30 @@
+AULA 21 - MySQL - Bóson Treinamentos:
+
+- Usando Valor-padrão
+
+- Criar um padrão:
+- EX:
+     ALTER TABLE nome_tabela
+     MODIFY COLUMN nome_coluna tipo_dados
+     DEFAULT 'valor_padrão';
+
+- EX2:
+     ALTER TABLE tbl_autores
+     MODIFY COLUMN Sobrenome_Autor Varchar(60)
+     DEFAULT 'da Silva';
+
+#Inserir registro para teste:
+     INSERT INTO tbl_autores(ID_Autor,Nome_autor)
+     VALUES(6, 'João');
+#Não foi especificado o sobrenome do autor; será assumido o padrão criado
+
+#Verificando o resultado:
+     SELECT * FROM tbl_autores;
+
+# Modifica e tira o DEFAULT
+ALTER TABLE tbl_autores
+MODIFY COLUMN Sobrenome_Autor Varchar(60);
+
+# Teste:
+INSERT INTO tbl_autores(ID_Autor,Nome_autor)
+VALUES(10, 'Ana');
