@@ -1,0 +1,14 @@
+AULA 22 - MySQL - Bóson Treinamentos:
+
+- Backup do Banco de Dados
+
+* Vá para a pasta do MYSQL SERVER\bin
+* execute o prompt de comando lá: mysql -u root -p
+* use o comando: "show databases;" e se quiser use o: "show tables;"
+* execute ainda na pasta mysql server\bin os comandos:
+    "mysqldump -u root -p db_biblioteca > C:\Users\Local\Onde\Será\Salvo\db_biblioteca.sql" -> invés de db_biblioteca, é o nome do arquivo que deseja salvar e o nome que será salvo.
+
+- Para fazer a restauração, entre no mysql pelo prompt e crie um schema:
+    "create schema bd_novo;"
+                                                    --nome do bd que irá receber o bd de Backup do endereço da direita--
+- volte para o outro prompt e digite: mysql -u root -p bd_novo < C:\Users\Local\Onde\Será\Salvo\db_biblioteca.sql
