@@ -1,0 +1,32 @@
+AULA 26 - MySQL - Bóson Treinamentos:
+
+- JOINS:
+* A cláusula JOIN é usada para combinar dados provenientes de duas ou mais tabelas, 
+    baseado em um relacionamente entre colunas destas tabelas.
+
+- JOINS - Categorias
+* INNER JOIN: Retorna linhas quando houver pelo menos uma correspodência em ambas as tabelas. é a intersecção entre as tabelas, e para isso usa-se a cláusula ON
+* OUTER JOIN: Retorna linhas mesmo quando não houver pelo menos uma correspodência em uma das tabelas (ou ambas).
+    O OUTER JOIN divide-se em LEFT JOIN, RIGHT JOIN e FULL JOIN.
+* EX:
+    SELECT tbl_Livro.Nome_Livro, tbl_Livro.ISBN, tbl_autores.Nome_Autor
+    FROM tbl_Livro
+    INNER JOIN tbl_autores
+    ON tbl_livro.ID_Autor = tbl_autores.ID_Autor;
+
+    # Usando Aliases e cláusulas WHERE E like:
+    SELECT L.Nome_Livro AS Livros, E.Nome_editora AS Editoras
+    FROM tbl_Livro AS L
+    INNER JOIN tbl_editoras AS E
+    ON L.ID_Editora = E.ID_editora
+    WHERE E.Nome_Editora LIKE 'M%';
+
+- INNER JOIN - Três tabelas:
+* EX:
+    SELECT L.Nome_Livro AS Livro, A.Nome_Autor
+    AS Autor,E.Nome_Eitora AS Editoras
+    FROM tbl_Livro AS L // coloca a tabela mais importante em FROM e usa o INNER JOIN para as tabelas auxiliares
+    INNER JOIN tbl_autores AS A
+    ON L.ID_autor = A.ID_autor
+    INNER JOIN tbl_editoras AS E
+    ON L.ID_editora = E.ID_editora;
