@@ -1,0 +1,43 @@
+AULA 27 - MySQL - Bóson Treinamentos:
+
+- OUTER JOINS:
+
+* LEFT JOIN: Retorna todas as linhas da tabela à esquerda, mesmo se não houver nenhuma correspondência na tabela à direta.
+    Retorna todos os dados de uma tabela e especifica a intersecção dessa tabela com a outra.
+* SINTAXE:
+    SELECT coluna
+    FROM tabela_esq
+    LEFT (OUTER) JOIN tabela_dir
+    ON tabela_esq.coluna = tabela_dir.coluna;
+
+* EX:
+    SELECT * FROM tbl_autores
+    LEFT JOIN tbl_Livro
+    ON tbl_Livro.ID_Autor=tbl_autores.ID_Autor;
+
+- LEFT JOIN excluindo correspodências: traz todos os dados da tabela da esquerda, excluindo a intersecção com a tabela da direita
+* SINTAXE:
+        SELECT coluna
+        FROM tabela_esq
+        LEFT JOIN tabela_dir
+        ON tabela_esq.coluna=tabela_dir.coluna
+        WHERE tabela_dir.coluna IS NULL;
+* EX:
+    SELECT * FROM tbl_autores
+    LEFT JOIN tbl_livro
+    ON tbl_Livro.ID_Autor = tbl_autores.ID_Autor
+    WHERE tbl_Livro.ID_Autor IS NULL;
+
+* RIGHT JOIN: Retorna todas as linhas da tabela à direita, mesmo se não houver nenhuma correspodência na tabela à esquerda. Basicamente a mesma coisa, só inverter as tabelas.
+    Retorna todos os dados da tabela da direita, inclusive a intersecção com a tabela a esquerda.
+* SINTAXE:
+    SELECT coluna
+    FROM tabela_esq
+    RIGHT (OUTER) JOIN tabela_dir
+    ON tabela_esq.coluna = tabela_dir.coluna;
+
+* EX:
+    SELECT * FROM tbl_livro AS Li
+    RIGHT JOIN tbl_editoras AS Ed
+    ON Li.ID_editora = Ed.ID_editora;
+* FULL JOIN: Retorna linhas quando houver uma correspodência em qualquer uma das tabelas. É uma combinação de LEFT e RIGHT JOINS.
