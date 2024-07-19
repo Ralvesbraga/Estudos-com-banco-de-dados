@@ -1,0 +1,37 @@
+AULA 28 - MySQL - Bóson Treinamentos:
+
+- Concatenação de Strings com CONCAT, IFNULL e COALESCE 
+
+* É possível concatenar strings usando-se a função CONCAT().
+* Sintaxe:
+         CONCAT(string | Nome_coluna, <string | nome_coluna)
+* EX:
+    SELECT CONCAT('Rafael', 'Alves Braga') AS 'Meu Nome';
+
+    SELECT CONCAT(Nome_autor, ' ', Sobrenome_autor)
+    AS 'Nome Completo' FROM tbl_autores;
+
+    SELECT CONCAT('Eu gosto do livro', Nome_Livro)
+    FROM tbl_Livro WHERE ID_autor = 2;
+
+
+# Se uma string for concatenada com NULL, o resultado 
+# retornado será apenas NULL:
+    SELECT CONCAT('A quantidade adquirida é ', ' ', quantidade)
+    FROM teste_nulos
+    WHERE item = 'Teclado';
+
+# Funções IFNULL e COALESCE:
+
+#IFNULL (valor, substituição)
+
+    SELECT CONCAT('A quantidade adquirida é ', ' ', IFNULL (quantidade, 0))
+    FROM teste_nulos
+    WHERE item = 'Teclado';
+
+# COALESCE (valor1, valor3, ..., valorN)
+# Essa função retornará o primeiro valor não-nulo encontrado em seus argumentos.
+
+    SELECT CONCAT('A quantidade adquirida é ', ' ', COALESCE(NULL, quantidade, NULL, 0))
+    FROM teste_nulos
+    WHERE item = 'Teclado';
