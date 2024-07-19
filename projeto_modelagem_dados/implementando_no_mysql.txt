@@ -1,0 +1,60 @@
+- CÓDIGO DE IMPLEMENTAÇÃO DO BD NO MYSQL:
+
+CREATE TABLE Departamento(
+Id_departamento smallint AUTO_INCREMENT PRIMARY KEY,
+Nome_departamento varchar(60)
+);
+
+SELECT * FROM Departamento;
+
+CREATE TABLE Disciplina(
+Id_disciplina smallint AUTO_INCREMENT PRIMARY KEY,
+Nome_disciplina varchar(80),
+Num_alunos smallint,
+Carga_horaria smallint,
+Descricao varchar(240),
+Id_departamento smallint
+);
+
+ALTER TABLE Disciplina
+ADD CONSTRAINT Fk_id_departamento 
+FOREIGN KEY(Id_departamento) 
+REFERENCES Departamento(Id_departamento);
+
+
+CREATE TABLE Curso(
+Id_Curso smallint AUTO_INCREMENT PRIMARY KEY,
+Id_departamento smallint,
+Nome_curso varchar(80));
+
+ALTER TABLE Curso
+ADD CONSTRAINT Fk_id_departamento 
+FOREIGN KEY(Id_departamento) 
+REFERENCES Departamento(Id_departamento);
+
+CREATE TABLE Professor(
+Id_professor smallint AUTO_INCREMENT PRIMARY KEY,
+Id_departamento smallint,
+nome_professor varchar(20),
+sobrenome_professor varchar(60),
+status_professor BOOLEAN);
+
+CREATE TABLE Prof_Disciplina(
+id_professor smallint,
+id_disciplina smallint);
+
+CREATE TABLE Turma(
+Id_turma smallint AUTO_INCREMENT PRIMARY KEY,
+id_cursos smallint,
+Periodo varchar(12),
+Num_alunos smallint,
+Data_inicio DATE,
+Data_fim DATE);
+
+#Código para deletar uma coluna, e também caso ela seja uma FK
+ALTER TABLE `bd_universidade`.`disciplina` 
+DROP FOREIGN KEY `Fk_id_departamento`;
+ALTER TABLE `bd_universidade`.`disciplina` 
+DROP COLUMN `Id_departamento`,
+DROP INDEX `Fk_id_departamento` ;
+;
