@@ -1,0 +1,54 @@
+AULA 29 - MySQL - Bóson Treinamentos:
+
+- Funções Matemáticas e Operadores Aritméticos:
+
+#É possível realizar operações matemáticas simples nos valores de uma coluna e retornar resultados
+#em uma coluna calculada. Para isso usamos os operadores matemáticos comuns:
+# + SOMA
+# - SUBTRAÇÃO
+# / DIVISÃO
+# * MULTIPLICAÇÃO
+# % ou MOD Módulo / resto da divisão
+# DIV DIVISÃO INTEIRA
+
+
+#EXEMPLOS:
+SELECT 3 * 9 AS 'Multiplicação';
+
+SELECT Nome_Livro, Preco_Livro * 5 AS 'Preço de 5 unidades'
+FROM tbl_livro;
+
+SELECT 2 * 9 / 3;
+
+SELECT Nome_Livro, Preco_Livro / 2 AS 'Preço com 50% de desconto'
+FROM tbl_livro;
+
+SELECT 10 MOD 3;
+
+# FUNÇÕES MATEMÁTICAS:
+#É possível também utilizar funçõs mtemáticas nos valores de uma coluna e 
+#retornar resultados em uma coluna calculada.
+#Abaixo vemos algumas funções matemáticas mais comuns:
+
+#CEILING()		Arredondar para cima
+#FLOOR()		Arredondar para baixo
+#PI()			Retornar o valor de Pi
+#POW(X,Y)		Retorna x elevado a y
+#SQRT()			Raiz quadrada de uma argumento
+#SIN()			Retorna o seno de um número dado em radianos
+#HEX()			Retorna a representação hexadecimal de um valor decimal
+
+
+#EXEMPLOS:
+SELECT Nome_Livro, CEILING(Preco_Livro * 5) AS 'Preço Arredondado'
+FROM tbl_livro;
+
+SELECT PI();
+
+SELECT POW(2,4);
+
+SELECT SQRT(81);
+
+SELECT SIN(PI());
+
+SELECT HEX(1200);
